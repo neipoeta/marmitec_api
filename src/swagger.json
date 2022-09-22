@@ -1,0 +1,86 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "API Documentation",
+        "version": "1.0.0",
+        "contact": {
+            "name": "Nei Poeta",
+            "email": "neipoeta@outlook.com"
+        }
+    },
+    "paths": {
+        "/categories": {
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Create a category",
+                "description": "Create a new category",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Name of the category"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the category"
+                                    }
+
+                                },
+                                "example": {
+                                    "name": "Category 1",
+                                    "description": "This is the first category"
+                                },
+                                "required": [
+                                    "name",
+                                    "description"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Get all categories",
+                "description": "Get all categories",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array"},
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "string a category"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "description": "string a category"
+                                            }
+                                        },
+                                        "example": {
+                                            "name": "Category 1",
+                                            "description": "This is the first category"
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
